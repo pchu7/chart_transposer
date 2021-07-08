@@ -10,10 +10,17 @@
 import docx
 
 
-document = docx.Document("Living Hope - A (Album Version).docx")
-all_paragraphs = document.paragraphs
+# ----------------------
+# Variables 
+# ----------------------
+doc = docx.Document("Living Hope - Test.docx")
+transposed_doc = docx.Document()
 
+all_paragraphs = doc.paragraphs
+
+print ( len ( all_paragraphs ) )
 for para in all_paragraphs:
     print ( para.text )
     #print ( "----------" )
+
 
