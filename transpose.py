@@ -13,14 +13,31 @@ import docx
 # ----------------------
 # Variables 
 # ----------------------
-doc = docx.Document("Living Hope - Test.docx")
-transposed_doc = docx.Document()
 
-all_paragraphs = doc.paragraphs
+# ----------------------
+# Procedures
+# ----------------------
 
-print ( len ( all_paragraphs ) )
-for para in all_paragraphs:
-    print ( para.text )
-    #print ( "----------" )
+# ----------------------
+# proc_input 
+# ----------------------
+#def proc_input():
+# ----------------------
+# __main__
+# ----------------------
 
+def main():
+    doc = docx.Document("Living Hope - Test0.docx")
+    transposed_doc = docx.Document()
+    all_paragraphs = doc.paragraphs
+    print ( len ( all_paragraphs ) )
+    for para in all_paragraphs:
+        #print ( para.text )
+        runs = para.runs
+        for run in runs:
+            if ( run.bold == True and run.italic == True ):
+                print ( run.text ) 
+            
 
+if __name__ == "__main__":
+    main()
